@@ -14,5 +14,6 @@ export OS_NAME
 export OS_KERNEL
 
 for SCRIPT in $(find . -name "install.sh" -print | grep -v "\.\/install.sh"); do
+	echo ""
 	sh $SCRIPT
 done
