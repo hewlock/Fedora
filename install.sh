@@ -13,6 +13,11 @@ echo "[INFO] $OS_NAME $OS_KERNEL"
 export OS_NAME
 export OS_KERNEL
 
+if [ "$OS_NAME" = "Fedora" ]; then
+	echo "[INFO] updating dnf"
+	sudo dnf -y update
+fi
+
 for SCRIPT in $(find . -name "install.sh" -print | grep -v "\.\/install.sh"); do
 	echo ""
 	sh $SCRIPT
