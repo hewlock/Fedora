@@ -22,4 +22,10 @@ sudo make install
 cd ..
 rm -rf arc-theme
 
+gsettings set org.gnome.desktop.interface clock-format "12h"
+gsettings set org.gnome.desktop.interface clock-show-date "true"
+gsettings set org.gnome.desktop.interface document-font-name "Roboto Regular 11"
+gsettings set org.gnome.desktop.interface font-name "Roboto Regular 11"
 gsettings set org.gnome.desktop.interface gtk-theme "Arc"
+gsettings set org.gnome.desktop.interface monospace-font-name "Roboto Mono 11"
+gsettings set org.gnome.desktop.wm.preferences titlebar-font "Roboto Bold 11"
