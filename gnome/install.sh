@@ -1,4 +1,4 @@
-if [ "$DESKTOP_SESSION" != "gnome" ]; then
+if [ "$DESKTOP_SESSION" != "gnome" ] || [ "$OS_NAME" != "Fedora" ]; then
 	exit 0
 fi
 
@@ -8,12 +8,10 @@ sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
 sudo rm -rf ~/.local/share/themes/{Arc,Arc-Darker,Arc-Dark}
 sudo rm -rf ~/.themes/{Arc,Arc-Darker,Arc-Dark}
 
-if [ "$OS_NAME" = "Fedora" ]; then
-	sudo dnf -y install autoconf
-	sudo dnf -y install automake
-	sudo dnf -y install pkgconfig
-	sudo dnf -y install gtk3-devel
-fi
+sudo dnf -y install autoconf
+sudo dnf -y install automake
+sudo dnf -y install pkgconfig
+sudo dnf -y install gtk3-devel
 
 git clone https://github.com/horst3180/arc-theme --depth 1
 cd arc-theme
