@@ -12,3 +12,10 @@ if [ -e ~/.vimrc ]; then
 fi
 
 ln -s $(pwd)/vim/.vimrc ~/.vimrc
+
+if [ -e ~/.vim ]; then
+	echo "[INFO] removing old ~/.vim"
+	rm ~/.vim
+fi
+
+ln -s $(pwd)/vim/.vim ~/.vim

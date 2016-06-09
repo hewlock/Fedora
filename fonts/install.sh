@@ -6,7 +6,7 @@ fi
 echo "[INFO] Installing Fonts"
 
 if [ -e ~/.fonts ]; then
-	echo "[INFO] removing old ~/.fonts directory"
+	echo "[INFO] removing old ~/.fonts"
 	rm ~/.fonts
 fi
 

@@ -1,4 +1,6 @@
-set number
-set tabstop=4
-set shiftwidth=4
 syntax on
+colorscheme solarized
+set background=dark
+set number
+set shiftwidth=4
+set tabstop=4
