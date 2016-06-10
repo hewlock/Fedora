@@ -8,13 +8,13 @@ else
 	OS_NAME="Unknown"
 fi
 
-echo "[INFO] $OS_NAME $OS_KERNEL"
+echo -e "[\033[0;32mINFO\033[0m] $OS_NAME $OS_KERNEL"
 
 export OS_NAME
 export OS_KERNEL
 
 if [ "$OS_NAME" = "Fedora" ]; then
-	echo "[INFO] updating dnf"
+	echo -e "[\033[0;32mINFO\033[0m] update dnf"
 	sudo dnf -y update
 fi
 

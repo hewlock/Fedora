@@ -2,7 +2,7 @@ if [ "$DESKTOP_SESSION" != "gnome" ] || [ "$OS_NAME" != "Fedora" ]; then
 	exit 0
 fi
 
-echo "[INFO] Installing Gnome Terminal"
+echo -e "[\033[0;32mINFO\033[0m] install terminal"
 
 SCHEMA=org.gnome.Terminal.Legacy.Settings
 gsettings set $SCHEMA dark-theme "false"
