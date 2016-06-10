@@ -10,5 +10,7 @@ if [ -e ~/.fonts ]; then
 	rm ~/.fonts
 fi
 
-# Fonts from https://github.com/google/fonts
+# Fonts from:
+# https://github.com/google/fonts
+# https://github.com/powerline/fonts
 ln -s $(pwd)/fonts/.fonts ~/.fonts
