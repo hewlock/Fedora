@@ -8,3 +8,5 @@
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
 
+(load-theme 'solarized t)
+(setq frame-background-mode 'dark)
