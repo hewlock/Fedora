@@ -1,6 +1,7 @@
 " :PlugInstall
 call plug#begin()
 Plug 'altercation/vim-colors-solarized'
+Plug 'ctrlpvim/ctrlp.vim' " :help ctrlp-commands and :help ctrlp-extensions
 call plug#end()
 
 syntax on
