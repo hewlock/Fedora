@@ -1,4 +1,6 @@
 " :PlugInstall
+" :help plugin-name
+" :help ctrlp
 call plug#begin()
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim' " :help ctrlp-commands and :help ctrlp-extensions
@@ -21,5 +23,7 @@ nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 
 let mapleader = "\<Space>"
 
-nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>f :CtrlP<CR>
+nnoremap <Leader>m :CtrlPMRU<CR>
 nnoremap <Leader>w :w<CR>
