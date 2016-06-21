@@ -1,9 +1,13 @@
+" Install Vim Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
 " :PlugInstall
-" :help plugin-name
-" :help ctrlp
 call plug#begin()
-Plug 'altercation/vim-colors-solarized'
-Plug 'ctrlpvim/ctrlp.vim' " :help ctrlp-commands and :help ctrlp-extensions
+Plug 'altercation/vim-colors-solarized' " :help vim-colors-solarized
 call plug#end()
 
 syntax on
@@ -19,11 +23,8 @@ set shiftwidth=4
 set t_Co=16
 set tabstop=4
 
-nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L> " clear search highlighting
-
 let mapleader = "\<Space>"
 
-nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>f :CtrlP<CR>
-nnoremap <Leader>m :CtrlPMRU<CR>
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L> " clear search highlighting
+nnoremap <Leader>q :wq<CR>
 nnoremap <Leader>w :w<CR>
