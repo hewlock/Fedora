@@ -11,6 +11,7 @@
 3. `sudo dnf install gcc kernel-devel-$(uname -r)`
 4. Insert Guest Additions CD and Run installer
 	- Devices > Insert Guest Additions CD Image...
+	- sudo sh /run/media/mmoulton/VBOXADDITIONS_5.0.22_108108/VBoxLinuxAdditions.run
 5. `reboot`
 
 #### Gnome Scaling
