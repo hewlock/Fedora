@@ -17,10 +17,10 @@
 	yasnippet
 	))
 (unless package-archive-contents
-  (package-refresh-contents))
+	(package-refresh-contents))
 (dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+	(unless (package-installed-p package)
+		(package-install package)))
 
 (setq auto-save-visited-file-name t)
 (setq auto-save-interval 20)
@@ -35,10 +35,11 @@
 (setq linum-format "%3d ")
 
 (setq default-tab-width 4)
+(electric-indent-mode 1)
 (set-default 'truncate-lines t)
 
 (menu-bar-mode -1)
-(electric-indent-mode 1)
+(set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?┃))
 
 (setq evil-want-C-u-scroll t)
 (require 'evil)
@@ -68,11 +69,11 @@
 (setq neo-show-hidden-files t)
 (setq projectile-switch-project-action 'neotree-projectile-action)
 (add-hook 'neotree-mode-hook
-		(lambda ()
-			(define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
-			(define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
-			(define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-			(define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
+	(lambda ()
+		(define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+		(define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+		(define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+		(define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
 (require 'powerline-minimal-vim-theme)
 (powerline-minimal-vim-theme)
