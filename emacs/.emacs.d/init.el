@@ -1,7 +1,8 @@
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
-
 (setq package-list '(
 	color-theme-solarized
 	evil
@@ -10,6 +11,7 @@
 	ido-vertical-mode
 	neotree
 	org
+	powerline
 	projectile
 	smex
 	yasnippet
@@ -71,6 +73,9 @@
 			(define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
 			(define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
 			(define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
+
+(require 'powerline-minimal-vim-theme)
+(powerline-minimal-vim-theme)
 
 (require 'projectile)
 (projectile-global-mode)
