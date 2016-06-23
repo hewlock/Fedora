@@ -64,9 +64,10 @@
 (smex-initialize)
 
 (require 'neotree)
-(setq neo-smart-open t)
-(setq neo-window-width 40)
 (setq neo-show-hidden-files t)
+(setq neo-smart-open t)
+(setq neo-theme 'arrow)
+(setq neo-window-width 40)
 (setq projectile-switch-project-action 'neotree-projectile-action)
 (add-hook 'neotree-mode-hook
 	(lambda ()
