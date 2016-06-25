@@ -6,14 +6,12 @@
 (setq package-list '(
 	color-theme-solarized
 	evil
-	flx-ido
-	ido
-	ido-vertical-mode
+	helm
+	helm-projectile
 	neotree
 	org
 	powerline
 	projectile
-	smex
 	yasnippet
 	))
 (unless package-archive-contents
@@ -45,23 +43,13 @@
 (require 'evil)
 (evil-mode 1)
 
-(require 'ido)
-(ido-mode 1)
-(ido-everywhere 1)
-
-(require 'flx-ido)
-(flx-ido-mode 1)
-
-(require 'ido-vertical-mode)
-(ido-vertical-mode 1)
-(setq ido-vertical-define-keys 'C-n-and-C-p-only)
-(setq ido-use-faces t)
-(set-face-attribute 'ido-vertical-first-match-face nil
-                    :background nil
-                    :foreground "#268bd2")
-
-(require 'smex)
-(smex-initialize)
+(require 'helm-config)
+(helm-mode 1)
+(set-face-attribute 'helm-header nil :foreground "black" :background "brightcyan" :weight 'bold)
+(set-face-attribute 'helm-selection nil :foreground "brightred" :background "white" :weight 'bold)
+(setq helm-completion-in-region-fuzzy-match t)
+(setq helm-mode-fuzzy-match t)
+(setq helm-split-window-in-side-p t)
 
 (require 'neotree)
 (set-face-attribute 'neo-banner-face nil :foreground "brightcyan")
@@ -100,11 +88,13 @@
 
 (require 'org)
 
-(global-set-key (kbd "C-@") nil)
-(global-set-key (kbd "C-@ C-b") 'ido-switch-buffer)
-(global-set-key (kbd "C-@ C-f") 'projectile-find-file)
-(global-set-key (kbd "C-@ C-g") 'projectile-grep)
-(global-set-key (kbd "C-@ C-o") 'neotree-find)
-(global-set-key (kbd "C-@ C-p") 'neotree-toggle-project)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "TAB") 'self-insert-command)
+(global-set-key (kbd "C-x C-f") 'helm-projectile)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x f") 'helm-projectile-ack)
+(global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
+(global-set-key (kbd "M-x") 'helm-M-x)
+;(global-set-key (kbd "C-@ C-f") 'projectile-find-file)
+;(global-set-key (kbd "C-@ C-g") 'projectile-grep)
+;(global-set-key (kbd "C-@ C-o") 'neotree-find)
+;(global-set-key (kbd "C-@ C-p") 'neotree-toggle-project)
+;(global-set-key (kbd "TAB") 'self-insert-command)
