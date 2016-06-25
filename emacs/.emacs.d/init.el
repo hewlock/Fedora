@@ -81,6 +81,12 @@
 		(define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
 		(define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
 		(define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
+(defun neotree-toggle-project ()
+	"Toggle show the NeoTree window."
+	(interactive)
+	(if (neo-global--window-exists-p)
+		(neotree-hide)
+		(neotree-dir (projectile-project-root))))
 
 (require 'powerline-minimal-vim-theme)
 (powerline-minimal-vim-theme)
@@ -94,6 +100,11 @@
 
 (require 'org)
 
-(global-set-key (kbd "C-@") 'projectile-find-file)
+(global-set-key (kbd "C-@") nil)
+(global-set-key (kbd "C-@ C-b") 'ido-switch-buffer)
+(global-set-key (kbd "C-@ C-f") 'projectile-find-file)
+(global-set-key (kbd "C-@ C-g") 'projectile-grep)
+(global-set-key (kbd "C-@ C-o") 'neotree-find)
+(global-set-key (kbd "C-@ C-p") 'neotree-toggle-project)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "TAB") 'self-insert-command)
