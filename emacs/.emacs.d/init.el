@@ -45,11 +45,17 @@
 
 (require 'helm-config)
 (helm-mode 1)
+(defadvice helm-display-mode-line (after undisplay-header activate) (setq header-line-format nil))
 (set-face-attribute 'helm-header nil :foreground "black" :background "brightcyan" :weight 'bold)
 (set-face-attribute 'helm-selection nil :foreground "brightred" :background "white" :weight 'bold)
 (setq helm-completion-in-region-fuzzy-match t)
 (setq helm-mode-fuzzy-match t)
 (setq helm-split-window-in-side-p t)
+
+(require 'helm-projectile)
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
 
 (require 'neotree)
 (set-face-attribute 'neo-banner-face nil :foreground "brightcyan")
