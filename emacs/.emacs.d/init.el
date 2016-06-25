@@ -20,6 +20,7 @@
 	(unless (package-installed-p package)
 		(package-install package)))
 
+; Auto-save buffers
 (setq auto-save-visited-file-name t)
 (setq auto-save-interval 20)
 (setq auto-save-timeout 5)
@@ -45,7 +46,7 @@
 
 (require 'helm-config)
 (helm-mode 1)
-(defadvice helm-display-mode-line (after undisplay-header activate) (setq header-line-format nil))
+(defadvice helm-display-mode-line (after undisplay-header activate) (setq header-line-format nil)) ; remove help header
 (set-face-attribute 'helm-header nil :foreground "black" :background "brightcyan" :weight 'bold)
 (set-face-attribute 'helm-selection nil :foreground "brightred" :background "white" :weight 'bold)
 (setq helm-completion-in-region-fuzzy-match t)
@@ -55,6 +56,7 @@
 (require 'helm-projectile)
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
+(setq projectile-switch-project-action 'neotree-projectile-action)
 (helm-projectile-on)
 
 (require 'neotree)
@@ -68,7 +70,6 @@
 (setq neo-smart-open nil)
 (setq neo-theme 'arrow)
 (setq neo-window-width 40)
-(setq projectile-switch-project-action 'neotree-projectile-action)
 (add-hook 'neotree-mode-hook
 	(lambda ()
 		(define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
@@ -103,4 +104,4 @@
 (global-set-key (kbd "C-x p") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
 (global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "TAB") 'self-insert-command)
+(global-set-key (kbd "TAB") 'self-insert-command) ; insert TAB character
