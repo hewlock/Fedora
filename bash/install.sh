@@ -22,8 +22,8 @@ fi
 echo -e "[\033[0;32mINFO\033[0m] link ~/.config/powerline"
 ln -s $(pwd)/bash/powerline ~/.config/powerline
 
-echo -e "[\033[0;32mINFO\033[0m] install ag"
-sudo dnf -y install the_silver_searcher
+echo -e "[\033[0;32mINFO\033[0m] install ack"
+sudo dnf -y install ack
 
 echo -e "[\033[0;32mINFO\033[0m] install acpi"
 sudo dnf -y install acpi
