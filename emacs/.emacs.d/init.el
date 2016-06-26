@@ -8,6 +8,7 @@
 	evil
 	helm
 	helm-projectile
+	markdown-mode
 	neotree
 	org
 	powerline
