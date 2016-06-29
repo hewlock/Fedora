@@ -41,6 +41,7 @@
 (menu-bar-mode -1)
 (set-display-table-slot standard-display-table 'vertical-border (make-glyph-code ?┃))
 
+(setq evil-want-C-i-jump nil) ; Enable TAB for org mode
 (setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode 1)
