@@ -87,6 +87,7 @@
 (require 'powerline-minimal-vim-theme)
 (powerline-minimal-vim-theme)
 
+(setq projectile-require-project-root nil)
 (require 'projectile)
 (projectile-global-mode)
 
