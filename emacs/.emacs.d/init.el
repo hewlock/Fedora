@@ -97,10 +97,15 @@
 (yas-global-mode 1)
 
 (require 'org)
+(setq org-startup-folded 'showall)
 
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c b") 'org-iswitchb)
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-x C-f") 'helm-projectile-find-file)
-(global-set-key (kbd "C-x C-n") 'neotree-toggle-project)
 (global-set-key (kbd "C-x C-o") 'neotree-find)
+(global-set-key (kbd "C-x C-p") 'neotree-toggle-project)
 (global-set-key (kbd "C-x C-r") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x f") 'helm-projectile-ack)
@@ -108,3 +113,7 @@
 (global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "TAB") 'self-insert-command) ; insert TAB character
+
+(define-key neotree-mode-map (kbd "C-c C-h") 'neotree-hidden-file-toggle)
+(define-key neotree-mode-map (kbd "C-c C-m") 'neotree-stretch-toggle)
+(define-key neotree-mode-map (kbd "C-c C-u") 'neotree-refresh)
