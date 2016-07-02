@@ -124,3 +124,8 @@
 (define-key neotree-mode-map (kbd "C-c C-h") 'neotree-hidden-file-toggle)
 (define-key neotree-mode-map (kbd "C-c C-m") 'neotree-stretch-toggle)
 (define-key neotree-mode-map (kbd "C-c C-u") 'neotree-refresh)
+
+(define-key org-mode-map (kbd "M-h") 'org-metaleft)
+(define-key org-mode-map (kbd "M-j") 'org-metadown)
+(define-key org-mode-map (kbd "M-k") 'org-metaup)
+(define-key org-mode-map (kbd "M-l") 'org-metaright)
