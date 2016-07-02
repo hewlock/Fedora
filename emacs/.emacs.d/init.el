@@ -6,6 +6,7 @@
 (setq package-list '(
 	color-theme-solarized
 	evil
+	evil-surround
 	helm
 	helm-projectile
 	markdown-mode
@@ -45,6 +46,9 @@
 (setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode 1)
+
+(require 'evil-surround)
+(global-evil-surround-mode 1)
 
 (require 'helm-config)
 (helm-mode 1)
