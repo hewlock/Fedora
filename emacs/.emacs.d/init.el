@@ -14,6 +14,7 @@
 	org
 	powerline
 	projectile
+	s
 	yasnippet
 	))
 (unless package-archive-contents
@@ -95,6 +96,8 @@
 (setq projectile-require-project-root nil)
 (require 'projectile)
 (projectile-global-mode)
+
+(require 's) ; string manipulation lib for snippets
 
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (require 'yasnippet)
