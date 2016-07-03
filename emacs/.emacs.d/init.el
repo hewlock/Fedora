@@ -106,25 +106,39 @@
 (require 'org)
 (setq org-startup-folded 'showall)
 
+(defun mmoulton-helm-search ()
+	(interactive)
+	(unless helm-source-buffers-list
+		(setq helm-source-buffers-list
+			(helm-make-source "Buffers" 'helm-source-buffers)))
+	(helm :sources '(helm-source-buffers-list
+					 helm-source-projectile-files-list)))
+(defun mmoulton-reload-emacs-config ()
+	(interactive)
+	(load-file "~/.emacs.d/init.el"))
+
+(global-unset-key (kbd "C-k"))
+
+(global-set-key (kbd "C-@") 'mmoulton-helm-search)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-x C-f") 'helm-projectile-find-file)
-(global-set-key (kbd "C-x C-o") 'neotree-find)
-(global-set-key (kbd "C-x C-p") 'neotree-toggle-project)
-(global-set-key (kbd "C-x C-r") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
+(global-set-key (kbd "C-h C-f") 'find-function)
+(global-set-key (kbd "C-k f") 'helm-projectile-ack)
+(global-set-key (kbd "C-k k") 'helm-show-kill-ring)
+(global-set-key (kbd "C-k m") 'helm-mark-ring)
+(global-set-key (kbd "C-k o") 'neotree-find)
+(global-set-key (kbd "C-k p") 'neotree-toggle-project)
+(global-set-key (kbd "C-k r") 'mmoulton-reload-emacs-config)
+(global-set-key (kbd "C-k t") 'helm-projectile-find-file)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "C-x f") 'helm-projectile-ack)
-(global-set-key (kbd "C-x p") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "TAB") 'self-insert-command) ; insert TAB character
 
 (define-key neotree-mode-map (kbd "C-c C-h") 'neotree-hidden-file-toggle)
 (define-key neotree-mode-map (kbd "C-c C-m") 'neotree-stretch-toggle)
 (define-key neotree-mode-map (kbd "C-c C-u") 'neotree-refresh)
-
 (define-key org-mode-map (kbd "M-h") 'org-metaleft)
 (define-key org-mode-map (kbd "M-j") 'org-metadown)
 (define-key org-mode-map (kbd "M-k") 'org-metaup)
