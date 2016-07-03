@@ -4,17 +4,20 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 (setq package-list '(
+	coffee-mode
 	color-theme-solarized
 	evil
 	evil-surround
 	helm
 	helm-projectile
+	less-css-mode
 	markdown-mode
 	neotree
 	org
 	powerline
 	projectile
 	s
+	web-mode
 	yasnippet
 	))
 (unless package-archive-contents
