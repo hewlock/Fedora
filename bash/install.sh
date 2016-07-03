@@ -27,3 +27,6 @@ sudo dnf -y install ack
 
 echo -e "[\033[0;32mINFO\033[0m] install acpi"
 sudo dnf -y install acpi
+
+echo -e "[\033[0;32mINFO\033[0m] install fortune"
+sudo dnf -y install fortune-mod

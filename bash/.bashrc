@@ -17,3 +17,6 @@ if [ -f `which powerline-daemon` ]; then
 fi
 
 alias emacs="emacs -nw"
+
+fortune -as
+echo ""
