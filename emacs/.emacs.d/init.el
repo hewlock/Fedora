@@ -126,13 +126,14 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-h C-f") 'find-function)
 (global-set-key (kbd "C-k f") 'helm-projectile-ack)
-(global-set-key (kbd "C-k k") 'helm-show-kill-ring)
 (global-set-key (kbd "C-k m") 'helm-mark-ring)
 (global-set-key (kbd "C-k o") 'neotree-find)
 (global-set-key (kbd "C-k p") 'neotree-toggle-project)
+(global-set-key (kbd "C-k q") 'helm-execute-kmacro)
 (global-set-key (kbd "C-k r") 'mmoulton-reload-emacs-config)
-(global-set-key (kbd "C-k t") 'helm-projectile-find-file)
+(global-set-key (kbd "C-k y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x f") 'helm-projectile-find-file)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "TAB") 'self-insert-command) ; insert TAB character
 
