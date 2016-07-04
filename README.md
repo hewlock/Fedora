@@ -9,9 +9,9 @@
    - Auto Mount: true
    - Make Permanent: true
 
-## Fedora
+## OS
 
-### Install Guest Additions
+### Fedora
 
 1. `sudo dnf update`
 2. `reboot`
@@ -21,12 +21,29 @@
 	- sudo sh /run/media/mmoulton/VBOXADDITIONS_5.0.22_108108/VBoxLinuxAdditions.run
 5. `reboot`
 
-### Gnome Scaling
+## Environment
+
+In ~
+
+1. `git clone https://github.com/hewlock/environment.git Environment`
+2. `cd Environment`
+3. `sh install.sh`
+4. `reboot`
+
+## Optional
+
+### Gnome Retina Display
+
+#### Virtual Box
+
+1. Display
+   - check "Use Unscaled HiDPI Output"
+
+#### Virtual Machine
 
 1. `su`
-2. `vi /usr/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml`
+2. `vim /usr/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml`
 3. Change:
-	- text-scaling-factor = 2.0
-	- scaling-factor = 2.0
-	- cursor-size = 12
-4. `reboot`
+	- `gsettings set org.gnome.desktop.interface text-scaling-factor 2`
+	- `gsettings set org.gnome.desktop.interface scaling-factor 2`
+	- `gsettings set org.gnome.desktop.interface cursor-size 12`
