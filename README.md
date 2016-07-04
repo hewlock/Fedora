@@ -21,7 +21,7 @@
 	- sudo sh /run/media/mmoulton/VBOXADDITIONS_5.0.22_108108/VBoxLinuxAdditions.run
 5. `reboot`
 
-## Environment
+## Install
 
 In ~
 
