@@ -41,7 +41,6 @@ In ~
 
 #### Virtual Machine
 
-1. `su`
-2. `gsettings set org.gnome.desktop.interface text-scaling-factor 2`
-3. `gsettings set org.gnome.desktop.interface scaling-factor 2`
-4. `gsettings set org.gnome.desktop.interface cursor-size 12`
+1. `gsettings set org.gnome.desktop.interface text-scaling-factor 2`
+2. `gsettings set org.gnome.desktop.interface scaling-factor 2`
+3. `gsettings set org.gnome.desktop.interface cursor-size 12`
