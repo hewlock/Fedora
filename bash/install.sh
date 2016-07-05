@@ -30,3 +30,9 @@ sudo dnf -y install acpi
 
 echo -e "[\033[0;32mINFO\033[0m] install fortune"
 sudo dnf -y install fortune-mod
+
+echo -e "[\033[0;32mINFO\033[0m] install rpm repositories as root"
+su -c "curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -"
+
+echo -e "[\033[0;32mINFO\033[0m] install node"
+sudo dnf -y install nodejs
