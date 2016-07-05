@@ -42,8 +42,6 @@ In ~
 #### Virtual Machine
 
 1. `su`
-2. `vim /usr/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml`
-3. Change:
-	- `gsettings set org.gnome.desktop.interface text-scaling-factor 2`
-	- `gsettings set org.gnome.desktop.interface scaling-factor 2`
-	- `gsettings set org.gnome.desktop.interface cursor-size 12`
+2. `gsettings set org.gnome.desktop.interface text-scaling-factor 2`
+3. `gsettings set org.gnome.desktop.interface scaling-factor 2`
+4. `gsettings set org.gnome.desktop.interface cursor-size 12`
