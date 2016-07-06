@@ -34,13 +34,7 @@ In ~
 
 ### Gnome Retina Display
 
-#### Virtual Box
-
-1. Display
-   - check "Use Unscaled HiDPI Output"
-
-#### Virtual Machine
-
-1. `gsettings set org.gnome.desktop.interface text-scaling-factor 2`
-2. `gsettings set org.gnome.desktop.interface scaling-factor 2`
-3. `gsettings set org.gnome.desktop.interface cursor-size 12`
+1. Virtual Box
+   - Display > check "Use Unscaled HiDPI Output"
+2. VM
+   - `sh optional/retina.sh`
